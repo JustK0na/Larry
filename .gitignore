@@ -1,0 +1,35 @@
+# --- ROS 2 (dla folderu robot_ws) ---
+robot_ws/build/
+robot_ws/install/
+robot_ws/log/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.class
+.venv/
+venv/
+env/
+
+*.safetensors
+*.bin
+*.gguf
+*.pt
+*.pth
+models/
+
+# --- C++ ---
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+*.o
+*.so
+*.a
+
+# --- OS / Edytory ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+# gemini generated
