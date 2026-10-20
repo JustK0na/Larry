@@ -1,0 +1,31 @@
+[0.029s] Invoking command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --build /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry -- -j8 -l8
+[0.141s] Invoked command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --build /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry -- -j8 -l8
+[0.168s] Invoking command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --install /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry
+[0.190s] -- Install configuration: ""
+[0.190s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/launch
+[0.190s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/launch/sim.launch.py
+[0.190s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/launch/sim.launch.py~
+[0.190s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/urdf
+[0.190s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/urdf/#larry_bot.urdf#
+[0.191s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/urdf/larry_bot.urdf~
+[0.192s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/urdf/.#larry_bot.urdf
+[0.192s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/urdf/larry_bot.urdf
+[0.193s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/worlds
+[0.193s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/worlds/diff_drive.sdf
+[0.193s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/worlds/diff_drive.sdf~
+[0.193s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/ament_index/resource_index/package_run_dependencies/Larry
+[0.193s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/ament_index/resource_index/parent_prefix_path/Larry
+[0.193s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/ament_prefix_path.sh
+[0.194s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/ament_prefix_path.dsv
+[0.194s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/path.sh
+[0.194s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/path.dsv
+[0.194s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.bash
+[0.194s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.sh
+[0.194s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.zsh
+[0.194s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.dsv
+[0.195s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/package.dsv
+[0.195s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/ament_index/resource_index/packages/Larry
+[0.195s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/cmake/LarryConfig.cmake
+[0.196s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/cmake/LarryConfig-version.cmake
+[0.196s] -- Up-to-date: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/package.xml
+[0.198s] Invoked command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --install /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry

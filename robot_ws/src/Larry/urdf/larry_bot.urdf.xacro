@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+
+<robot name="larry" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Baza -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+	<box size="0.4 0.2 0.1" />
+      </geometry>
+      <material name="green">
+	<color rgba="0.2 0.8 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	<box size="0.4 0.2 0.1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.008" ixy="0.0" ixz="0.0" iyy="0.028" iyz="0.0" izz="0.033"/>
+    </inertial>
+  </link>
+
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+	<cylinder radius="0.1" length="0.1" />
+      </geometry>
+      <material name="black">
+	<color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	<cylinder radius="0.1" length="0.05" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0.1 0.12 -0.05" rpy="-1.5707 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+	<cylinder radius="0.1" length="0.1" />
+      </geometry>
+      <material name="black">
+	<color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	<cylinder radius="0.1" length="0.05" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0.1 -0.12 -0.05" rpy="-1.5707 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="caster">
+    <visual>
+      <geometry>
+	<sphere radius="0.1" />
+      </geometry>
+      <material name="black">
+	<color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	<sphere radius="0.1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <joint name="caster_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster"/>
+    <origin xyz="-0.15 0 -0.05" rpy="-1.5707 0 0"/>
+  </joint>
+  <gazebo reference="caster">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+
+
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.24</wheel_separation>
+      <wheel_radius>0.1</wheel_radius>
+      <topic>cmd_vel</topic>
+    </plugin>
+  </gazebo>
+  
+  
+</robot>

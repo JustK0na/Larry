@@ -1,0 +1,59 @@
+[0.027s] Invoking command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry -DCMAKE_INSTALL_PREFIX=/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry
+[0.379s] -- The C compiler identification is GNU 13.3.0
+[0.681s] -- The CXX compiler identification is GNU 13.3.0
+[0.741s] -- Detecting C compiler ABI info
+[1.020s] -- Detecting C compiler ABI info - done
+[1.050s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.054s] -- Detecting C compile features
+[1.055s] -- Detecting C compile features - done
+[1.080s] -- Detecting CXX compiler ABI info
+[1.370s] -- Detecting CXX compiler ABI info - done
+[1.396s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.397s] -- Detecting CXX compile features
+[1.398s] -- Detecting CXX compile features - done
+[1.422s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.880s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.247s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.460s] WARNING: Package name "Larry" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[2.609s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.609s] -- Configured cppcheck include dirs: 
+[2.610s] -- Configured cppcheck exclude dirs and/or files: 
+[2.614s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.614s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.624s] -- Added test 'lint_cmake' to check CMake code style
+[2.628s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.642s] -- Added test 'uncrustify' to check C / C++ code style
+[2.642s] -- Configured uncrustify additional arguments: 
+[2.646s] -- Added test 'xmllint' to check XML markup files
+[2.653s] -- Configuring done (2.6s)
+[2.660s] -- Generating done (0.0s)
+[2.664s] -- Build files have been written to: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry
+[2.677s] Invoked command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry -DCMAKE_INSTALL_PREFIX=/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry
+[2.682s] Invoking command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --build /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry -- -j8 -l8
+[2.789s] Invoked command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --build /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry -- -j8 -l8
+[2.816s] Invoking command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --install /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry
+[2.838s] -- Install configuration: ""
+[2.838s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/launch
+[2.839s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/launch/sim.launch.py
+[2.839s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/launch/sim.launch.py~
+[2.839s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/urdf
+[2.839s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/worlds
+[2.840s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/worlds/diff_drive.sdf
+[2.840s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/worlds/diff_drive.sdf~
+[2.841s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/worlds/#diff_drive.sdf#
+[2.841s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/ament_index/resource_index/package_run_dependencies/Larry
+[2.842s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/ament_index/resource_index/parent_prefix_path/Larry
+[2.842s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/ament_prefix_path.sh
+[2.843s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/ament_prefix_path.dsv
+[2.843s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/path.sh
+[2.843s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/environment/path.dsv
+[2.843s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.bash
+[2.844s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.sh
+[2.844s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.zsh
+[2.845s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/local_setup.dsv
+[2.845s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/package.dsv
+[2.846s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/ament_index/resource_index/packages/Larry
+[2.846s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/cmake/LarryConfig.cmake
+[2.846s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/cmake/LarryConfig-version.cmake
+[2.846s] -- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/install/Larry/share/Larry/package.xml
+[2.851s] Invoked command in '/home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.archlinux.org PS1=[\u@\h \W]\$ /usr/bin/cmake --install /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/Larry/build/Larry
