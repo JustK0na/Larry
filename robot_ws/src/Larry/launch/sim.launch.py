@@ -31,9 +31,27 @@ def generate_launch_description():
         arguments=['-name', 'larry', '-string', robot_desc, '-z', '0.15'],
         output='screen'
     )
+    ros_gz_bridge = Node (
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            # Zegar (Gazebo -> ROS 2)
+            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+            # Prędkość (ROS 2 -> Gazebo)
+            '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+            # Odometria (Gazebo -> ROS 2)
+            '/model/larry/odometry@nav_msgs/msg/Odometry[gz.msgs.Odometry',
+        ],
+        remappings=[
+            # Zmiana długiej nazwy z Gazebo na standardowe /odom w ROS 2
+            ('/model/larry/odometry', '/odom'),
+        ],
+        output='screen'
+    )
 
     return LaunchDescription([
         gazebo,
-        spawn_robot
+        spawn_robot,
+        ros_gz_bridge
     ])
 #gemini generated
