@@ -1,0 +1,79 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Configured 'flake8' exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (3.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/build/Larry
+-- Install configuration: ""
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/launch
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/launch/sim.launch.py
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/launch/sim.launch.py~
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/larry_bot.urdf~
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/larry_bot.urdf.xacro~
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/log
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/log/latest_build
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/log/build_2026-10-14_15-19-23
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/log/build_2026-10-14_15-19-23/logger_all.log
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/log/build_2026-10-14_15-19-23/events.log
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/log/latest
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/log/COLCON_IGNORE
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/build
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/build/.built_by
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/build/COLCON_IGNORE
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/local_setup.sh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/setup.bash
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/_local_setup_util_ps1.py
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/.colcon_install_layout
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/setup.ps1
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/setup.zsh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/local_setup.zsh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/local_setup.ps1
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/setup.sh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/_local_setup_util_sh.py
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/COLCON_IGNORE
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/install/local_setup.bash
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/urdf/larry_bot.urdf.xacro
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/worlds
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/worlds/empty_world.sdf
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/worlds/diff_drive.sdf
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/worlds/diff_drive.sdf~
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/worlds/empty_world.sdf~
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/ament_index/resource_index/package_run_dependencies/Larry
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/ament_index/resource_index/parent_prefix_path/Larry
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/environment/ament_prefix_path.sh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/environment/ament_prefix_path.dsv
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/environment/path.sh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/environment/path.dsv
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/local_setup.bash
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/local_setup.sh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/local_setup.zsh
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/local_setup.dsv
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/package.dsv
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/ament_index/resource_index/packages/Larry
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/cmake/LarryConfig.cmake
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/cmake/LarryConfig-version.cmake
+-- Installing: /home/mikolaj/studia/projektSpecjalnosciowyMagisterka/robot_ws/src/install/Larry/share/Larry/package.xml
