@@ -1,0 +1,12 @@
+crit==4.2.1
+nftables==0.1
+numpy==2.5.4
+protobuf==7.36.1
+pycairo==1.29.2
+pycriu==4.2.1
+PyGObject==3.58.1
+scipy==1.18.1
+setproctitle==1.3.7
+TBB @ file:///build/onetbb/src/build/python/python_build
+VapourSynth==80
+wxPython==4.2.5
