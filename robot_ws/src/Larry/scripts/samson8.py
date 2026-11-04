@@ -71,8 +71,8 @@ class sub(Node):
             sinc_term = math.sin(the) / the
             
 
-        k1 = 1.0
-        k2 = 2.0
+        k1 = 20.0
+        k2 = 60.0
         
         v_r = k1 * xe + vd * math.cos(the)
         omega_r = omega_d + k2 * the + vd * ye * sinc_term
