@@ -1,0 +1,106 @@
+(.venv) [mikolaj@arch LLM]$ python3 chat.py
+rozpoczeto czat z qwen3-vl:8b
+Wpisz 'koniec psot', aby zakonczyc czat
+Ty: hej
+(opcjonalne)ściezka do obrazka: car3.jpg
+EjAj: Traffic lights green for straight. No immediate obstacles. Proceed straight.
+
+Ty:     
+(opcjonalne)ściezka do obrazka: car4.jpg
+EjAj: Road clear, car ahead in same lane. Maintain distance, proceed straight.
+
+Ty: 
+(opcjonalne)ściezka do obrazka: car5.jpg
+EjAj: Road clear, traffic flowing. Proceed straight.
+
+Ty: 
+(opcjonalne)ściezka do obrazka: car6.jpg
+EjAj: Proceed straight through the roundabout; no obstacles in lane.
+
+Ty:    
+(opcjonalne)ściezka do obrazka: car7.jpg
+EjAj: Proceed straight, maintain lane position. Traffic clear.
+
+Ty:    
+(opcjonalne)ściezka do obrazka: car8.jpg
+EjAj: Proceed straight. Road clear; maintain lane position.
+
+Ty: its our last stop, please provide log of you jurney, step by step make short desription of your enviroment and decision in each provided images in the past and this last one
+(opcjonalne)ściezka do obrazka: car9.jpg
+EjAj: **Journey Log**  
+1. *Urban intersection*: Green lights, pedestrians. → *Proceed straight*.  
+2. *Multi-lane road*: Cars, bridge overhead. → *Maintain distance, proceed straight*.  
+3. *Gas station area*: Clear road, parking signs. → *Proceed straight*.  
+4. *Roundabout*: Grass, cyclist on path. → *Proceed straight through roundabout*.  
+5. *Underpass*: Railway tracks, traffic flow. → *Proceed straight, stay in lane*.  
+6. *Underpass mural*: No obstacles. → *Proceed straight*.  
+7. *Red-light intersection*: Tram left, traffic halted. → *STOP (last stop)*.
+
+Ty: i will now test your memory and check how big contex can you hold, i will be adding images and i need your desciption of them and the road before, they are not real, just pre-made so dont be scared you can do something wrong with the traffic   
+(opcjonalne)ściezka do obrazka: car3.jpg
+EjAj: Image: Green traffic lights, pedestrians on sidewalk, urban intersection. Proceed straight.  
+Road before: Red-light intersection (stopped, tram crossing).
+
+Ty: what do you think about that situation?
+(opcjonalne)ściezka do obrazka: car4.jpg
+EjAj: Road clear, traffic flowing. Proceed straight.
+
+Ty: 
+(opcjonalne)ściezka do obrazka: car5.jpg
+EjAj: Image: Gas station (Witamy sign), parking signs, clear road. Road before: Multi-lane road with bridge, cars flowing. Proceed straight through gas station area.
+
+Ty:    
+(opcjonalne)ściezka do obrazka: car6.jpg
+EjAj: Image: Roundabout with central grass, cyclist on path, wyjazd (exit) sign, trees, buildings.  
+Road before: Gas station area (Witamy sign, clear road).  
+Action: Proceed straight through roundabout; lane clear, no obstacles.
+
+Ty: 
+(opcjonalne)ściezka do obrazka: car7.jpg
+EjAj: Image: Bridge over railway tracks, multi-lane road, cars ahead.  
+Road before: Roundabout with wyjazd sign, cyclist on path.  
+Action: Proceed straight; lane clear, traffic flowing.
+
+Ty: 
+(opcjonalne)ściezka do obrazka: car8.jpg
+EjAj: Image: Green traffic lights, pedestrians on sidewalk, urban intersection.  
+Road before: Stopped at red light (tram crossing).  
+Action: Proceed straight.
+
+Ty: 
+(opcjonalne)ściezka do obrazka: car9.jpg
+EjAj: Traffic lights red. Stop at intersection; tram and pedestrians present.
+
+Ty: 
+(opcjonalne)ściezka do obrazka: car3.jpg
+EjAj: Green lights; pedestrians on sidewalk, urban intersection. Proceed straight (after stopping at red light in prior step).
+
+Ty: do you recognise thoose places? which loop (if any) is that?
+(opcjonalne)ściezka do obrazka: car4.jpg
+EjAj: Locations: Polish urban area (Witamy gas station, Legnica road marking). No loop—this is a **linear route** through intersections, gas stations, and roundabouts. The path follows a straight progression through urban infrastructure (no circular route).
+
+Ty: but have you seen this gas station during this training session earler?
+(opcjonalne)ściezka do obrazka: car4.jpg
+EjAj: Yes, this gas station (Witamy) appeared in the prior image (the one with the green canopy, parking signs, and Legnica road marking). It's the same location—part of the linear route through the urban area.
+
+Ty: and how many times was this image sent to you?
+(opcjonalne)ściezka do obrazka: 
+EjAj: This gas station (Witamy) image was sent **once** during the session (in the third image sequence).
+
+Ty: what do you understand by image sequences?
+(opcjonalne)ściezka do obrazka: car5.jpg
+EjAj: Image sequences are ordered sets of images showing sequential steps in a route. Each image in the sequence represents a moment in the robot's journey through the obstacle course (e.g., intersection, road segment). Here, the sequence depicts progression through urban infrastructure (traffic lights, roundabouts, gas station).
+
+Ty: so how many sequences there were? car6.jpg
+(opcjonalne)ściezka do obrazka: car6.jpg
+EjAj: Sequence count: **6 image steps** in the obstacle course journey (from traffic lights to underpass mural).
+
+Ty: how many times did you road this journey?   
+(opcjonalne)ściezka do obrazka: car7.jpg
+EjAj: The journey (sequence of images) was processed **once** as a single test. Each image was analyzed sequentially to map the route.
+
+Ty: have you ever be here before?
+(opcjonalne)ściezka do obrazka: car3.jpg
+EjAj: Yes—this is the **starting intersection** in the journey (first image in the sequence). The robot has previously processed this location during the test.
+
+Ty: 

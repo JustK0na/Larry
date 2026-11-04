@@ -1,0 +1,82 @@
+import json
+from ollama import Client
+
+IP_SERVER = "192.168.100.18"
+remote_client = Client(host=f"http://{IP_SERVER}:11434")
+
+MODEL_BRAIN = 'SpeakLeash/bielik-11b-v3.0-instruct:Q4_K_M'
+MODEL_VISION = 'lfm3-vl:2b'
+
+# 1. Kontekst Mózgu (Bielik)
+brain_context = """Jesteś interfejsem sterującym robota mobilnego. 
+Użytkownik podaje instrukcje w języku polskim. Twoim zadaniem jest przetłumaczenie tych instrukcji 
+na krótki, precyzyjny prompt w języku angielskim dla modułu wizyjnego, mówiący mu na co ma uważać.
+Odpowiadaj zawsze i wyłącznie w formacie JSON z jednym kluczem: "vision_prompt"."""
+brain_history = [{'role': 'system', 'content': brain_context}]
+
+print(f"[SYSTEM] Uruchomiono system hybrydowy:\n[SYSTEM] MÓZG: {MODEL_BRAIN}\n[SYSTEM] OCZY: {MODEL_VISION}\n")
+print("[SYSTEM] Wpisz 'koniec psot', aby zakończyć.\n")
+
+VALID_MOVES = ["DRIVE", "STOP", "LEFT", "RIGHT"]
+
+while True:
+    user_input = input("Użytkownik (instrukcja): ")
+    if user_input.lower() == "koniec psot":
+        break
+
+    img_path = input("Ścieżka do kamery (obrazek): ").strip()
+    if not img_path:
+        print("[OSTRZEŻENIE] Brak ścieżki do obrazu. Robot wymaga wejścia wizyjnego.")
+        continue
+
+    # === KROK 1: Bielik generuje prompt wizyjny (JSON) ===
+    print(f"\n[BRAIN] Bielik analizuje polecenie...")
+    brain_history.append({'role': 'user', 'content': user_input})
+    
+    brain_response = remote_client.chat(
+        model=MODEL_BRAIN, 
+        messages=brain_history,
+        format='json'
+    )
+    
+    brain_json_str = brain_response.message.content
+    brain_history.append({'role': 'assistant', 'content': brain_json_str})
+    
+    try:
+        brain_data = json.loads(brain_json_str)
+        vision_prompt = brain_data.get("vision_prompt", "Analyze the image.")
+        print(f"[BRAIN] Instrukcja wygenerowana dla modułu wizyjnego: '{vision_prompt}'")
+    except Exception as e:
+        print(f"[BŁĄD] Nieprawidłowa struktura JSON od modułu logicznego: {e}")
+        vision_prompt = "Analyze the image."
+
+    # === KROK 2: LFM3 patrzy na obraz i decyduje ===
+    print(f"[VISION] LFM3 pobiera klatkę i analizuje...")
+    
+    # Łączymy instrukcję od Bielika z twardą regułą formatowania bezpośrednio w wiadomości Usera
+    strict_vision_prompt = f"{vision_prompt}\n\nBased on the image and the instruction above, output exactly one word from this list: DRIVE, STOP, LEFT, RIGHT."
+    
+    vision_message = {
+        'role': 'user', 
+        'content': strict_vision_prompt,
+        'images': [img_path]
+    }
+    
+    # Wysyłamy TYLKO bieżącą klatkę i instrukcję (bez historii systemowej)
+    vision_response = remote_client.chat(
+        model=MODEL_VISION, 
+        messages=[vision_message],
+        options={"temperature": 0.0}
+    )
+    
+    raw_decision = vision_response.message.content.upper()
+    
+    # Ekstrakcja bezpieczna: szukamy słowa kluczowego w odpowiedzi
+    final_move = "UNKNOWN"
+    for move in VALID_MOVES:
+        if move in raw_decision:
+            final_move = move
+            break
+            
+    print(f"[EXECUTION] SUROWA ODPOWIEDŹ LFM3: {raw_decision.strip()}")
+    print(f"[EXECUTION] ZROZUMIANA DECYZJA RUCHU: {final_move}\n" + "-"*50 + "\n")
