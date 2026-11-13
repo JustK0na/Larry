@@ -14,7 +14,7 @@ def generate_launch_description():
     robot_desc = xacro.process_file(xacro_file).toxml()
 
     # Ścieżka do Twojego skopiowanego pliku świata
-    world_file = os.path.join(pkg_share, 'worlds', 'empty_world.sdf')
+    world_file = os.path.join(pkg_share, 'worlds', 'parking.sdf')
 
     # Wywołanie domyślnego skryptu startowego Gazebo
     gazebo = IncludeLaunchDescription(
@@ -41,6 +41,7 @@ def generate_launch_description():
             '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
             # Odometria (Gazebo -> ROS 2)
             '/model/larry/odometry@nav_msgs/msg/Odometry[gz.msgs.Odometry',
+            '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image',
         ],
         remappings=[
             # Zmiana długiej nazwy z Gazebo na standardowe /odom w ROS 2
