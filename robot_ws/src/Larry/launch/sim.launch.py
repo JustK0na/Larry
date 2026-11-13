@@ -1,4 +1,4 @@
-import os
+;9uimport os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
@@ -49,10 +49,18 @@ def generate_launch_description():
         ],
         output='screen'
     )
+    robot_driver = Node(
+        package='Larry',
+        executable='robot_driver.py',
+        name='motor_controller_node',
+        parameters=[{'use_sim_time': True}],
+        output='screen'
+    )
 
     return LaunchDescription([
         gazebo,
         spawn_robot,
-        ros_gz_bridge
+        ros_gz_bridge,
+        robot_driver
     ])
 #gemini generated

@@ -31,6 +31,7 @@ install(DIRECTORY
 )
 install(PROGRAMS
   scripts/samson8.py
+  scripts/robot_driver.py
   DESTINATION lib/${PROJECT_NAME}
 )
 ament_package()
