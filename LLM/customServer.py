@@ -5,6 +5,8 @@ from PIL import Image
 import torch
 import io
 import uvicorn
+from collections import deque
+
 
 # Konfiguracja argumentów startowych
 parser = argparse.ArgumentParser()
@@ -42,6 +44,9 @@ model = AutoModel.from_pretrained(
 )
 
 app = FastAPI()
+MAX_FRAMES = 4
+frame_history = deque(maxlen=MAX_FRAMES)
+
 print("Serwer gotowy! Nasłuchiwanie na klatki...")
 
 @app.post("/vision")
@@ -49,10 +54,12 @@ async def analyze_frame(prompt: str = Form(...), image: UploadFile = File(...)):
     # 1. Odczyt obrazu z sieci
     image_data = await image.read()
     pil_image = Image.open(io.BytesIO(image_data)).convert("RGB")
-    
+
+    frame_history.append(pil_image)
+    image_tags = "<image>\n" * len(frame_history)
     # 2. Przygotowanie wejścia dla modelu
-    formatted_prompt = f"<image>\n{prompt}"
-    inputs = processor(formatted_prompt, pil_image, return_tensors="pt").to("cuda")
+    formatted_prompt = f"{image_tags}{prompt}"
+    inputs = processor(formatted_prompt, list(frame_history), return_tensors="pt").to("cuda")
     
     # 3. Inferencja na karcie graficznej
     output = model.generate(**inputs, max_new_tokens=10)
