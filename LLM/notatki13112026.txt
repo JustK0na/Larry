@@ -1,0 +1,4 @@
+Komenda [], przez określony czas. Wartość w %. Tak żeby LLM podał i komende i czas trwania.
+
+
+Samą komendę i przez X s ta komenda jest ustalona i stop po każdej. Uwzględnić opóźnienia z sieci. LFM decyzyjny i zwykły [Komenda + czas jej trwania]
