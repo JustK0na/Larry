@@ -18,7 +18,12 @@ models_map = {
     'lfm': r'X:\ollama\models\custom\LFM3-VL-2B', 
     'basal': r'X:\ollama\models\custom\Basal-omni-1.0-mini'
 }
+image_token_map = {
+    'lfm': '<image>', 
+    'basal': '<|image|>'
+}
 MODEL_PATH = models_map[args.model]
+IMAGE_TOKEN = image_token_map[args.model]
 
 print(f"[{MODEL_PATH}] Ładowanie modelu do VRAM...")
 
@@ -35,13 +40,23 @@ processor = AutoProcessor.from_pretrained(
     trust_remote_code=True
 )
 
-model = AutoModel.from_pretrained(
-    MODEL_PATH,
-    quantization_config=bnb_config,
-    device_map="cuda:0",
-    local_files_only=True,
-    trust_remote_code=True
-)
+try:
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_PATH,
+        quantization_config=bnb_config,
+        device_map="cuda:0",
+        local_files_only=True,
+        trust_remote_code=True
+    )
+except ValueError:
+    print(f"[{MODEL_PATH}] Model odrzucił klasę CausalLM. Awaryjne ładowanie przez AutoModel...")
+    model = AutoModel.from_pretrained(
+        MODEL_PATH,
+        quantization_config=bnb_config,
+        device_map="cuda:0",
+        local_files_only=True,
+        trust_remote_code=True
+    )
 
 app = FastAPI()
 MAX_FRAMES = 4
@@ -56,16 +71,25 @@ async def analyze_frame(prompt: str = Form(...), image: UploadFile = File(...)):
     pil_image = Image.open(io.BytesIO(image_data)).convert("RGB")
 
     frame_history.append(pil_image)
-    image_tags = "<image>\n" * len(frame_history)
-    # 2. Przygotowanie wejścia dla modelu
-    formatted_prompt = f"{image_tags}{prompt}"
-    inputs = processor(formatted_prompt, list(frame_history), return_tensors="pt").to("cuda")
+    image_tags = f"{IMAGE_TOKEN}\n" * len(frame_history)
+    formatted_prompt = f"{image_tags}{prompt}\nDecision:" 
+    inputs = processor(text=formatted_prompt, images=list(frame_history), return_tensors="pt").to("cuda")
+   # 3. Inferencja na karcie graficznej (wyłączamy losowość parametrem do_sample)
+    output = model.generate(**inputs, max_new_tokens=10, do_sample=False)
+    full_text = processor.decode(output[0], skip_special_tokens=True)
+
+    # Odcięcie długości oryginalnego promptu, aby czytać tylko odpowiedź modelu
+    input_length = inputs["input_ids"].shape[1]
+    generated_tokens = output[0][input_length:]
+    raw_text = processor.decode(generated_tokens, skip_special_tokens=True).strip()
     
-    # 3. Inferencja na karcie graficznej
-    output = model.generate(**inputs, max_new_tokens=10)
-    raw_text = processor.decode(output[0], skip_special_tokens=True)
+    # 4. Wyciągnięcie tylko odpowiedzi modelu (tego co po słowie "Decision:")
+    if "Decision:" in full_text:
+        raw_text = full_text.split("Decision:")[-1].strip()
+    else:
+        raw_text = full_text.strip()
     
-    # 4. Wyciągnięcie komendy
+    # 5. Wyciągnięcie komendy (z bezpiecznym parsowaniem)
     clean_decision = "STOP"
     for move in ["DRIVE", "STOP", "LEFT", "RIGHT"]:
         if move in raw_text.upper():
