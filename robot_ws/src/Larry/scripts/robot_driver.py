@@ -8,30 +8,30 @@ class MotorControllerNode(Node):
     def __init__(self):
         super().__init__('motor_controller_node')
         
-        # Odbieranie komend z AI
+
         self.subscription = self.create_subscription(String, '/ai_command', self.command_callback, 10)
         
-        # Publikowanie prędkości (Gazebo/Fizyczny robot)
+
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
         
-        # NOWE: Raportowanie stanu robota z powrotem do mózgu AI
+
         self.state_publisher_ = self.create_publisher(String, '/robot_state', 10)
         
         self.LINEAR_SPEED = 0.3  
         self.ANGULAR_SPEED = 0.5
         self.current_twist = Twist()
         
-        # Timer do ciągłego publikowania aktualnego Twist (wymagane w symulacji)
+
         self.timer = self.create_timer(0.1, self.timer_callback)
         
-        # NOWE: Zmienne do zarządzania czasem ruchu
+
         self.action_timer = None 
         self.is_moving = False
         
         self.get_logger().info("Motor Controller gotowy. Oczekuję na AI...")
 
     def command_callback(self, msg):
-        """Odbiera komendę np. 'DRIVE 1.5' lub samo 'LEFT'."""
+        #Odbiera komendę np. 'DRIVE 1.5' lub samo 'LEFT'."""
         parts = msg.data.upper().split()
         command = parts[0] if len(parts) > 0 else "STOP"
         
@@ -65,13 +65,13 @@ class MotorControllerNode(Node):
             self.stop_robot()
             
     def start_movement(self, duration, cmd_name):
-        """Uruchamia ruch i ustawia budzik (timer) na jego zakończenie."""
+        #Uruchamia ruch i ustawia budzik (timer) na jego zakończenie
         self.get_logger().info(f"Wykonuję: {cmd_name} przez {duration}s")
         
         self.is_moving = True
         self.publish_state("MOVING")
         
-        # Jeśli poprzedni timer jeszcze tyka, kasujemy go
+        # Jeśli poprzedni timer jeszcze jest kasujemy go
         if self.action_timer is not None:
             self.action_timer.cancel()
             
@@ -79,7 +79,7 @@ class MotorControllerNode(Node):
         self.action_timer = self.create_timer(duration, self.action_timer_callback)
 
     def action_timer_callback(self):
-        """Uruchamia się, gdy minie czas ruchu."""
+        #Po duration
         # Od razu kasujemy timer, żeby wywołał się tylko raz
         if self.action_timer is not None:
             self.action_timer.cancel()
@@ -89,7 +89,7 @@ class MotorControllerNode(Node):
         self.stop_robot()
 
     def stop_robot(self):
-        """Zatrzymuje silniki i wysyła sygnał STOPPED do Mózgu."""
+        #Zatrzymuje silniki i wysyła sygnał STOPPED do /ai_command
         self.current_twist.linear.x = 0.0
         self.current_twist.angular.z = 0.0
         
@@ -100,7 +100,6 @@ class MotorControllerNode(Node):
         if self.is_moving:
             self.is_moving = False
             
-        # Zawsze ogłaszaj zatrzymanie, żeby odblokować Mózg AI
         self.publish_state("STOPPED")
 
     def publish_state(self, state_str):

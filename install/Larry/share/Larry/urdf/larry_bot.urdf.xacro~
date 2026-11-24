@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<robot name="larry" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Baza -->
+  <link>
+    <visual>
+      <geometry>
+	<box size="0.4 0.2 0.1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>
